@@ -1,22 +1,21 @@
-import { useState } from 'react'
-
-import './App.css'
-import Imagen from "imagen/Imagen"
-import Web from "web/Web"
-
+import React, {Suspense} from "react"
+const ImagenApp = React.lazy(() => import('imagenApp/ImagenApp'))
+const WebApp = React.lazy(() => import('webApp/WebApp'))
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <div>
+        <Suspense fallback="Cargando...">
+          <ImagenApp />
+        </Suspense>    
+      </div>
 
-      <Imagen />
-      <Web />
+      <div>
+        <Suspense fallback="Cargando 1...">
+          <WebApp />
+        </Suspense>    
+      </div>
     </>
   )
 }

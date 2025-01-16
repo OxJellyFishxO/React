@@ -2,7 +2,7 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react-swc'
 
 // Importacion del paquete vite-plugin-federation
-import federation from '@originjs/vite-plugin-federation'
+import federation from '@originjs/vite-plugin-federation';
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -10,12 +10,12 @@ export default defineConfig({
     react(),
     federation({
       // Servir componente 'Web' 'remote'
-      name: "web",
-      filename: "remoteEntry,js",
+      name: "web-app",
+      filename: "remoteEntry.js",
       exposes: {
-        "./Web": "./src/Web.jsx",
+        "./WebApp": "./src/App.jsx",
       },
-      shared: ["react"],
+      shared: ["react", "react-dom"],
     }),
   ],
 
@@ -24,6 +24,6 @@ export default defineConfig({
     modulePreload: false,
     target: "esnext",
     minify: false,
-    cssCodeSplit: false,
+    cssCodeSplit: false
   },
 });

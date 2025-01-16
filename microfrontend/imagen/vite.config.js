@@ -16,18 +16,18 @@ export default defineConfig({
     // Plugin de MicroFrontend
     federation({
       // Servir componente 'Imagen' 'remote'
-      name:"imagen",
-
+      //name:"imagen-app",
+      name: 'web-app',
       // El archivo que contendrá la configuración de federation
-      filename: "remoteEntry.js",
+      filename: 'remoteEntry.js',
       
       // Los componentes/módulos que expones para que otros puedan consumir
       exposes: {
-        "./Imagen:": "./src/Imagen.jsx",
+        './ImagenApp': './src/App.jsx',
       },
 
       // Las dependencias compartidas entre aplicaciones
-      shared: ["react"],
+      shared: ["react", "react-dom"],
     }),
   ],
 

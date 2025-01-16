@@ -1,13 +1,15 @@
 import imagenMicroFrontend from './assets/microfrontend.png'
 
-function App() {
+function ImagenApp() {
     return (
         <>
             <div>
+                <center>
                 <img src={imagenMicroFrontend} alt="Imagen de Micro Front-End"/>
+                </center>
             </div>
         </>
     )
 }
 
-export default App
+export default ImagenApp

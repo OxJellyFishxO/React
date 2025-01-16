@@ -13,10 +13,10 @@ export default defineConfig({
       name: "main",
       //Aplicaciones remotas que nuestra aplicacion puede consumir
       remotes: {
-        imagen: "http://localhost:4173/assets/remoteEntry.js",
-        web: "http://localhost:4174/assets/remoteEntry.js",
+        imagenApp: "http://localhost:4173/assets/remoteEntry.js",
+        webApp: "http://localhost:4174/assets/remoteEntry.js"
       },
-      shared:["react"],
+      shared:["react", 'react-dom'],
     }),
   ],
 
@@ -25,6 +25,6 @@ export default defineConfig({
     modulePreload: false,
     target: "esnext",
     minify: false,
-    cssCodeSplit: false
+    cssCodeSplit: false,
   }
 })
